@@ -21,6 +21,7 @@ public class BusinessModel implements IModel
 
     private IDataAccess dao;
     
+    //Change for GITHUB
     public BusinessModel()
     {
         dao = new DataAccess();
