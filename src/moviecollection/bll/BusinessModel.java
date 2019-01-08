@@ -9,6 +9,7 @@ import java.util.List;
 import moviecollection.be.Category;
 import moviecollection.be.Movie;
 import moviecollection.be.MovieFilter;
+import moviecollection.dal.DataAccess;
 import moviecollection.dal.IDataAccess;
 
 /**
@@ -19,6 +20,12 @@ public class BusinessModel implements IModel
 {
 
     private IDataAccess dao;
+    
+    public BusinessModel()
+    {
+        dao = new DataAccess();
+    }
+    
     @Override
     public List<Movie> getFilteredMovies(String filter)
     {
