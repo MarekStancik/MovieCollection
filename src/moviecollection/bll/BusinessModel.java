@@ -5,11 +5,78 @@
  */
 package moviecollection.bll;
 
+import java.util.List;
+import moviecollection.be.Category;
+import moviecollection.be.Movie;
+import moviecollection.be.MovieFilter;
+import moviecollection.dal.IDataAccess;
+
 /**
  *
  * @author Marek
  */
-public class BusinessModel
+public class BusinessModel implements IModel
 {
+
+    private IDataAccess dao;
+    @Override
+    public List<Movie> getFilteredMovies(String filter)
+    {
+        return dao.getFilteredMovies(filter);
+    }
+
+    @Override
+    public List<Movie> getFilteredMovies(MovieFilter filter)
+    {
+        return dao.getFilteredMovies(filter);
+    }
+
+    @Override
+    public List<Movie> getAllMovies()
+    {
+        return dao.getAllMovies();
+    }
+
+    @Override
+    public List<Category> getAllCategories()
+    {
+        return dao.getAllCategories();
+    }
+
+    @Override
+    public void addMovie(Movie m)
+    {
+        return dao.addMovie(m);
+    }
+
+    @Override
+    public void removeMovie(Movie m)
+    {
+        return dao.removeMovie(m);
+    }
+
+    @Override
+    public void addCategory(Category c)
+    {
+        dao.addCategory(c);
+    }
+
+    @Override
+    public void removeCategory(Category c)
+    {
+        dao.removeCategory(c);
+    }
+
+    @Override
+    public void setMovieCategories(Movie m, Category[] categories)
+    {
+        dao.setMovieCategories(m,categories);
+    }
+
+    @Override
+    public void setMovieRating(Movie m, short rating)
+    {
+        dao.setMovieRating(m,rating);
+    }
     
 }

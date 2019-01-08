@@ -5,11 +5,25 @@
  */
 package moviecollection.bll;
 
+import java.util.List;
+import moviecollection.be.Category;
+import moviecollection.be.Movie;
+import moviecollection.be.MovieFilter;
+
 /**
  *
  * @author Marek
  */
-public class IModel
+public interface IModel
 {
-    
+    List<Movie> getFilteredMovies(String filter);
+    List<Movie> getFilteredMovies(MovieFilter filter);
+    List<Movie> getAllMovies();
+    List<Category> getAllCategories();
+    void addMovie(Movie m);
+    void removeMovie(Movie m);
+    void addCategory(Category c);
+    void removeCategory(Category c);
+    void setMovieCategories(Movie m,Category[] categories);
+    void setMovieRating(Movie m,short rating);
 }
