@@ -23,7 +23,7 @@ public interface IDataAccess
     public void addMovie(Movie movie);
     public void removeMovie(Movie movie);
     public void addCategory(Category category);
-    public void removeCategort(Category category);
+    public void removeCategory(Category category);
     public void setMovieCategories(Movie movie, Category[] categories);
     public void setMovieRating(Movie movie, short rating);
 }
