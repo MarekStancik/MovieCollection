@@ -5,11 +5,19 @@
  */
 package moviecollection.be;
 
+import java.util.List;
+import javafx.scene.control.TableColumn.SortType;
+
 /**
  *
  * @author Marek
  */
 public class MovieFilter
 {
+    private String title;
+    private short rating;
+    private List<Category> categories;
+    private SortType order;
+    
     
 }

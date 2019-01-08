@@ -5,11 +5,25 @@
  */
 package moviecollection.dal;
 
+import java.util.List;
+import moviecollection.be.Category;
+import moviecollection.be.Movie;
+import moviecollection.be.MovieFilter;
+
 /**
  *
  * @author Marek
  */
-public class IDataAccess
+public interface IDataAccess
 {
-    
+    public List<Movie> getFilteredMovies(String filter);
+    public List<Movie> getFilteredMovies(MovieFilter filter);
+    public List<Movie> getAllMovies();
+    public List<Category> getAllCategories();
+    public void addMovie(Movie movie);
+    public void removeMovie(Movie movie);
+    public void addCategory(Category category);
+    public void removeCategort(Category category);
+    public void setMovieCategories(Movie movie, Category[] categories);
+    public void setMovieRating(Movie movie, short rating);
 }
