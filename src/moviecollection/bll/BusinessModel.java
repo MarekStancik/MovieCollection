@@ -54,13 +54,13 @@ public class BusinessModel implements IModel
     @Override
     public void addMovie(Movie m)
     {
-        return dao.addMovie(m);
+        dao.addMovie(m);
     }
 
     @Override
     public void removeMovie(Movie m)
     {
-        return dao.removeMovie(m);
+        dao.removeMovie(m);
     }
 
     @Override
