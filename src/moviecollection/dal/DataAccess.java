@@ -53,7 +53,7 @@ public class DataAccess implements IDataAccess
     }
 
     @Override
-    public void removeCategort(Category category) {
+    public void removeCategory(Category category) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
