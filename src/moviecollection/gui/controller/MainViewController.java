@@ -42,7 +42,7 @@ public class MainViewController implements Initializable
     @FXML
     private Label rating;
     
-    private ModelViewController model;
+    
     
     private void handleButtonAction(ActionEvent event)
     {
@@ -56,15 +56,20 @@ public class MainViewController implements Initializable
         model = new ModelViewController();
         // TODO
     }    
-
+    
+    private ModelViewController model;
+    private boolean includeAll = false;
+    
     @FXML
     private void radioAll(ActionEvent event)
     {
+        includeAll = true;
     }
 
     @FXML
     private void radioOne(ActionEvent event)
     {
+        includeAll = false;
     }
 
     @FXML
@@ -90,6 +95,7 @@ public class MainViewController implements Initializable
     @FXML
     private void addCat(ActionEvent event)
     {
+        
     }
 
     @FXML
@@ -105,6 +111,7 @@ public class MainViewController implements Initializable
     @FXML
     private void addMovie(ActionEvent event)
     {
+         //model.addMovie(m);
     }
 
     @FXML
