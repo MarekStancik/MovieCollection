@@ -24,6 +24,6 @@ public interface IModel
     void removeMovie(Movie m);
     void addCategory(Category c);
     void removeCategory(Category c);
-    void setMovieCategories(Movie m,Category[] categories);
+    void editMovie(Movie m);
     void setMovieRating(Movie m,short rating);
 }

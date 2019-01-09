@@ -76,9 +76,9 @@ public class BusinessModel implements IModel
     }
 
     @Override
-    public void setMovieCategories(Movie m, Category[] categories)
+    public void editMovie(Movie m)
     {
-        dao.setMovieCategories(m,categories);
+        dao.editMovie(m);
     }
 
     @Override

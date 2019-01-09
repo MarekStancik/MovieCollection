@@ -38,19 +38,50 @@ public class ModelViewController
         movieList.setAll(model.getFilteredMovies(filter));
     }
     
-    public List<Movie> getFilteredMovies(MovieFilter filter)
+    public void setMovieFilter(MovieFilter filter)
+    {
+        movieList.setAll(model.getFilteredMovies(filter));
+    }
+    
+    public List<Movie> getMovieList()
+    {
+        return movieList;
+    }
+    
+    public List<Category> getCategoryList()
+    {
+       return categoryList;
+    }
+    
+    public void addMovie(Movie m)
     {
         
     }
     
-    public List<Movie> getMovieList();
-    List<Category> getAllCategories();
-    void addMovie(Movie m);
-    void removeMovie(Movie m);
-    void addCategory(Category c);
-    void removeCategory(Category c);
-    void setMovieCategories(Movie m,Category[] categories);
-    void setMovieRating(Movie m,short rating);
+    public void removeMovie(Movie m)
+    {
+        
+    }
+    
+    public void addCategory(Category c)
+    {
+        
+    }
+    
+    public void removeCategory(Category c)
+    {
+        
+    }
+    
+    public void editMovie(Movie m)
+    {
+        
+    }
+    
+    void setMovieRating(Movie m,short rating)
+    {
+        
+    }
     
     
 }

@@ -58,7 +58,7 @@ public class DataAccess implements IDataAccess
     }
 
     @Override
-    public void setMovieCategories(Movie movie, Category[] categories) {
+    public void editMovie(Movie movie) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
