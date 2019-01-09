@@ -6,7 +6,6 @@
 package moviecollection.be;
 
 import java.util.List;
-import javafx.scene.control.TableColumn.SortType;
 
 /**
  *
@@ -14,6 +13,7 @@ import javafx.scene.control.TableColumn.SortType;
  */
 public class MovieFilter
 {
+    public enum SortType { Title, Category, Rating , ID};
     private String title;
     private short rating;
     private List<Category> categories;
