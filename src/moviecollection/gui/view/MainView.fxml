@@ -1,14 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="moviecollection.MainViewController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="716.0" prefWidth="1015.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="moviecollection.MainViewController">
+   <children>
+      <HBox layoutX="2.0" prefHeight="713.0" prefWidth="1013.0">
+         <children>
+            <VBox prefHeight="713.0" prefWidth="228.0">
+               <children>
+                  <Label alignment="TOP_CENTER" prefHeight="44.0" prefWidth="228.0" text="Filtering" />
+                  <RadioButton mnemonicParsing="false" text="Includes all">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Includes 1">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </RadioButton>
+                  <VBox prefHeight="493.0" prefWidth="228.0" />
+                  <Label text="Order by:" />
+                  <HBox prefHeight="56.0" prefWidth="228.0">
+                     <children>
+                        <ToggleButton mnemonicParsing="false" prefHeight="58.0" prefWidth="120.0" text="Title">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ToggleButton>
+                        <ToggleButton mnemonicParsing="false" prefHeight="56.0" prefWidth="120.0" text="Cat">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ToggleButton>
+                        <ToggleButton mnemonicParsing="false" prefHeight="56.0" prefWidth="120.0" text="Rating">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ToggleButton>
+                     </children>
+                  </HBox>
+                  <TextField>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <HBox prefHeight="39.0" prefWidth="228.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="Add" />
+                        <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" text="Remove" textAlignment="CENTER">
+                           <HBox.margin>
+                              <Insets left="106.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="713.0" prefWidth="304.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="304.0">
+                     <children>
+                        <Label text="Movies" />
+                        <TextField>
+                           <HBox.margin>
+                              <Insets left="69.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <ListView prefHeight="666.0" prefWidth="304.0" />
+                  <HBox prefHeight="45.0" prefWidth="304.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefWidth="101.0" text="Add" />
+                        <Button mnemonicParsing="false" prefWidth="102.0" text="Remove" />
+                        <Button mnemonicParsing="false" prefWidth="101.0" text="Edit" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="713.0" prefWidth="480.0">
+               <children>
+                  <Label text="Description" />
+                  <AnchorPane prefHeight="662.0" prefWidth="480.0">
+                     <children>
+                        <ImageView fitHeight="210.0" fitWidth="200.0" layoutX="21.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label layoutX="301.0" layoutY="64.0" text="Movie Title" />
+                        <Label layoutX="284.0" layoutY="123.0" text="Rating" />
+                        <Text layoutX="141.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="87.6708984375" />
+                        <ProgressBar layoutX="201.0" layoutY="144.0" prefWidth="200.0" progress="0.0" />
+                        <Label layoutX="415.0" layoutY="145.0" text="0/10" />
+                        <Button layoutX="284.0" layoutY="545.0" mnemonicParsing="false" text="Play" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
 </AnchorPane>
