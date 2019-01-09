@@ -30,10 +30,10 @@
                <children>
                   <Label text="Title" />
                   <Label text="Year" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="movieTitle" GridPane.columnIndex="1" />
+                  <TextField fx:id="movieYear" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label text="Categories" GridPane.rowIndex="2" />
-                  <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ListView fx:id="movieCat" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
                <padding>
                   <Insets left="10.0" right="10.0" top="10.0" />
@@ -41,12 +41,12 @@
             </GridPane>
             <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="406.0">
                <children>
-                  <Button mnemonicParsing="false" text="Cancel">
+                  <Button mnemonicParsing="false" onAction="#pressCancel" text="Cancel">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Save">
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#pressSave" text="Save">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>

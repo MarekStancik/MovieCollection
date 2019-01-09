@@ -5,17 +5,21 @@
  */
 package moviecollection.gui.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import moviecollection.be.Category;
 import moviecollection.be.Movie;
 
@@ -53,7 +57,7 @@ public class MainViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        model = new ModelViewController();
+        //model = new ModelViewController();
         // TODO
     }    
     
@@ -63,7 +67,7 @@ public class MainViewController implements Initializable
     @FXML
     private void radioAll(ActionEvent event)
     {
-        includeAll = true;
+        //includeAll = true;
     }
 
     @FXML
@@ -109,9 +113,14 @@ public class MainViewController implements Initializable
     }
 
     @FXML
-    private void addMovie(ActionEvent event)
+    private void addMovie(ActionEvent event) throws IOException
     {
-         //model.addMovie(m);
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/moviecollection/gui/view/AddEditView.fxml"));
+        stage.setScene(new Scene(loader.load()));
+        
+        AddEditViewController window = loader.<AddEditViewController>getController();
+        stage.show();
     }
 
     @FXML
