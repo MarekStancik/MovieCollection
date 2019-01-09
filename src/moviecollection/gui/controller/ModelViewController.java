@@ -5,8 +5,12 @@
  */
 package moviecollection.gui.controller;
 
+import java.awt.Desktop;
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.CheckBox;
@@ -27,11 +31,18 @@ public class ModelViewController
     private ObservableList<Category> categoryList;
     private IModel model;
     
+    public static void main(String[] kokot)
+    {
+        ModelViewController model = new ModelViewController();
+        Movie m = new Movie();
+        m.setFilePath("C:\\Users\\Marek\\Pictures\\Instagram\\911B253A-5CDB-4F1D-A6FF-3EF0426252D7.mov");
+        model.tryPlayMovie(m);
+    }
     public ModelViewController()
     {
         model = new BusinessModel();
-        movieList = FXCollections.observableArrayList(model.getAllMovies());
-        categoryList = FXCollections.observableArrayList(model.getAllCategories());
+       // movieList = FXCollections.observableArrayList(model.getAllMovies());
+       // categoryList = FXCollections.observableArrayList(model.getAllCategories());
     }
     
     public void setMovieFilter(String filter)
@@ -96,7 +107,13 @@ public class ModelViewController
             File f = new File(m.getFilePath());
             if(f.exists() && !f.isDirectory()) 
             { 
-                // Call windows media player
+                try
+                {
+                    Desktop.getDesktop().open(f);
+                } catch (IOException ex)
+                {
+                    return false;
+                }
                 return true;
             }
         }
