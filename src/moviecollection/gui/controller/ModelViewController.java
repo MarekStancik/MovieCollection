@@ -32,13 +32,13 @@ public class ModelViewController
     private IModel model;
     private MovieFilter filter;
     
-    public static void main(String[] kokot)
+  /*  public static void main(String[] kokot)
     {
         ModelViewController model = new ModelViewController();
         Movie m = new Movie();
         m.setFilePath("C:\\Users\\Marek\\Pictures\\Instagram\\911B253A-5CDB-4F1D-A6FF-3EF0426252D7.mov");
         model.tryPlayMovie(m);
-    }
+    }*/
     public ModelViewController()
     {
         model = new BusinessModel();
