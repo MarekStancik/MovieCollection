@@ -5,6 +5,7 @@
  */
 package moviecollection.gui.controller;
 
+import java.io.File;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -50,38 +51,55 @@ public class ModelViewController
     
     public List<Category> getCategoryList()
     {
-       return categoryList;
+        return categoryList;
     }
     
     public void addMovie(Movie m)
     {
-        
+        model.addMovie(m);
+        movieList.add(m);
     }
     
     public void removeMovie(Movie m)
     {
-        
+        model.removeMovie(m);
+        movieList.remove(m);
     }
     
     public void addCategory(Category c)
     {
-        
+        model.addCategory(c);
+        categoryList.add(c);
     }
     
     public void removeCategory(Category c)
     {
-        
+        model.removeCategory(c);
+        categoryList.remove(c);
     }
     
     public void editMovie(Movie m)
     {
-        
+        model.editMovie(m);
     }
     
-    void setMovieRating(Movie m,short rating)
+    public void setMovieRating(Movie m,short rating)
     {
-        
+        m.setPersonalRating(rating);
+        model.setMovieRating(m, rating);
     }
     
-    
+    public boolean tryPlayMovie(Movie m)
+    {
+        if(!m.getFilePath().isEmpty())
+        {
+            File f = new File(m.getFilePath());
+            if(f.exists() && !f.isDirectory()) 
+            { 
+                // Call windows media player
+                return true;
+            }
+        }
+        return false;
+    }
 }
