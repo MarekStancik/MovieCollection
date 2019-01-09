@@ -30,6 +30,7 @@ public class ModelViewController
     private ObservableList<Movie> movieList;
     private ObservableList<Category> categoryList;
     private IModel model;
+    private MovieFilter filter;
     
     public static void main(String[] kokot)
     {
@@ -41,17 +42,20 @@ public class ModelViewController
     public ModelViewController()
     {
         model = new BusinessModel();
-       // movieList = FXCollections.observableArrayList(model.getAllMovies());
-       // categoryList = FXCollections.observableArrayList(model.getAllCategories());
+        filter = new MovieFilter();
+        movieList = FXCollections.observableArrayList(model.getAllMovies());
+        categoryList = FXCollections.observableArrayList(model.getAllCategories());
     }
     
     public void setMovieFilter(String filter)
     {
-        movieList.setAll(model.getFilteredMovies(filter));
+        this.filter.setTitle(filter);
+        movieList.setAll(model.getFilteredMovies(this.filter));
     }
     
     public void setMovieFilter(MovieFilter filter)
     {
+        this.filter = filter;
         movieList.setAll(model.getFilteredMovies(filter));
     }
     

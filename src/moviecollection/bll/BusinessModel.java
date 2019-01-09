@@ -28,11 +28,6 @@ public class BusinessModel implements IModel
         dao = new DataAccess();
     }
     
-    @Override
-    public List<Movie> getFilteredMovies(String filter)
-    {
-        return dao.getFilteredMovies(filter);
-    }
 
     @Override
     public List<Movie> getFilteredMovies(MovieFilter filter)

@@ -19,5 +19,44 @@ public class MovieFilter
     private List<Category> categories;
     private SortType order;
     
+    public void setTitle(String title)
+    {
+        this.title = title;
+    }
+    
+    public void setRating(short rating)
+    {
+        this.rating = rating;
+    }
+    
+    public void setCategories(List<Category> cats)
+    {
+        this.categories = cats;
+    }
+    
+    public void setSortType(SortType sort)
+    {
+        this.order = sort;
+    }
+    
+    public String getTitle()
+    {
+        return title;
+    }
+    
+    public short getRating()
+    {
+        return rating;
+    }
+    
+    public List<Category> getCategories()
+    {
+        return categories;
+    }
+    
+    public SortType getSortType()
+    {
+        return order;
+    }
     
 }

@@ -16,7 +16,6 @@ import moviecollection.be.MovieFilter;
  */
 public interface IModel
 {
-    List<Movie> getFilteredMovies(String filter);
     List<Movie> getFilteredMovies(MovieFilter filter);
     List<Movie> getAllMovies();
     List<Category> getAllCategories();
