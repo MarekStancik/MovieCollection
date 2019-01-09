@@ -5,11 +5,13 @@
  */
 package moviecollection.dal;
 
+import java.sql.Connection;
+
 /**
  *
  * @author Marek
  */
-public class IDbProvider
+public interface IDbProvider
 {
-    
+    public Connection getConnection();
 }
